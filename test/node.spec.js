@@ -128,6 +128,9 @@ describe('Node', () => {
 			parent.appendChild(child);
 			child.swapWithParent();
 
+			// console.log(parent);
+			// console.log(child);
+			// console.log(parent.parent);
 			expect(parent.parent).to.equal(child);
 		});
 
@@ -141,6 +144,8 @@ describe('Node', () => {
 
 			grandson.swapWithParent();
 
+			// (expect(child.parent).to.equal(grandson)) ? console.log(true) : console.log(false);
+			// expect(grandson.parent).to.equal(root) ? console.log(true) : console.log(false);
 			expect(child.parent).to.equal(grandson);
 			expect(grandson.parent).to.equal(root);
 		});
@@ -166,7 +171,7 @@ describe('Node', () => {
 			root.appendChild(right);
 
 			right.swapWithParent();
-
+			// console.log(root);
 			expect(left.parent).to.equal(right);
 		})
 
@@ -181,6 +186,10 @@ describe('Node', () => {
 			left.appendChild(childOfLeft);
 
 			left.swapWithParent();
+
+			// expect(left.right).to.equal(right) ? console.log(true) : console.log(false);
+			// expect(left.left).to.equal(root) ? console.log(true) : console.log(false);
+			// expect(root.left).to.equal(childOfLeft) ? console.log(true) : console.log(false);
 
 			expect(left.right).to.equal(right);
 			expect(left.left).to.equal(root);
@@ -200,7 +209,13 @@ describe('Node', () => {
 			right.appendChild(childOfRight);
 
 			childOfLeft.swapWithParent();
+			// expect(root.left).to.equal(childOfLeft) ? console.log(true) : console.log(false);
+
 			childOfRight.swapWithParent();
+			// expect(root.right).to.equal(childOfRight) ? console.log(true) : console.log(false);
+
+			// console.log(root.left);
+			// console.log(childOfLeft);
 
 			expect(root.left).to.equal(childOfLeft);
 			expect(root.right).to.equal(childOfRight);
