@@ -325,6 +325,7 @@ describe('MaxHeap', () => {
 			const detached = h.detachRoot();
 			h.restoreRootFromLastInsertedNode(detached);
 
+			// console.log(h.root);
 			expect(h.root).to.equal(lastInsertedNode);
 			expect(h.root.left).to.equal(left);
 			expect(left.parent).to.equal(lastInsertedNode);
