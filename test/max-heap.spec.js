@@ -73,6 +73,8 @@ describe('MaxHeap', () => {
 				h.insertNode(node);
 			});
 
+			// console.log(h.root);
+
 			expect(h.root).to.equal(nodes[0]);
 			expect(h.root.left).to.equal(nodes[1]);
 			expect(h.root.right).to.equal(nodes[2]);
@@ -288,6 +290,8 @@ describe('MaxHeap', () => {
 			h.push(15, 42);
 
 			h.detachRoot();
+			
+			// console.log(h.root);
 
 			expect(h.parentNodes[0].data).to.equal(42);
 			expect(h.parentNodes[0].priority).to.equal(15);
